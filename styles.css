@@ -24,13 +24,8 @@ body{
 }
 
 :root {
-    --clr-navbar: #131518;
-    --clr-black: #1e2328;
-    --clr-black-medium: #2a2e35;
-    --clr-black-light: #3b3f46;
-    --clr-yellow: #f5a302;
-    --clr-yellow-medium: #f5b301;
-    --clr-yellow-light: #fedd53;
+    --clr-navbar: white;
+    
 
     --font: 'Oswald', sans-serif;
 }
@@ -503,8 +498,9 @@ a{
     top: 0;
     right: -70%;
     transition:all 200ms ease-in;
-    background-color: black;
     z-index: 300;
+    background-color: white;
+    color: gray;
 }
 
 .hamburger-menu ul{

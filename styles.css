@@ -13,7 +13,6 @@ body{
     padding: 0;
     margin: 0;
     font-family: var(--font);
-    background-color: var(--clr-black);
 
     -webkit-touch-callout:none; /* iOS Safari */
     -webkit-user-select:none;   /* Chrome/Safari/Opera */
@@ -25,7 +24,7 @@ body{
 
 :root {
     --clr-navbar: white;
-    
+    --clr-green: #6cb532;
 
     --font: 'Oswald', sans-serif;
 }
@@ -75,7 +74,7 @@ a{
 }
 
 .navbar{
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 100;
@@ -147,14 +146,14 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    
-    /* border-top: 4px solid var(--clr-yellow); */
-    background-color: var(--clr-black);
+    overflow: hidden;
 }
 
-.footer .direccion{
+.footer .direccion {
     display: flex;
     flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer .direccion p{
@@ -202,7 +201,9 @@ a{
 }
 
 .footer .logo img{
-    height: 128px;
+    width: 100%;
+    height: auto;
+    max-width: 360px;
 }
 
 .footer .logo h2{
@@ -595,6 +596,54 @@ a{
     height: 100vh;
 }
 
+form {
+    display: flex;
+    background-color: var(--clr-green);
+    flex-direction: column;
+    padding: 1em;
+    font-family: var(--font);
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form label {
+    visibility:  hidden;
+}
+
+form input, form textarea{
+    border: 1px solid white;
+    color: inherit;
+    font-family: inherit;
+    border-radius: 0px;
+    width: 100%;
+    padding: 16px 14px;
+    font-size: 14px;
+    margin-bottom: 18px;
+    background: none;
+}
+
+form button{
+    border-radius: 30px;
+    color: white;
+    background: rgb(73, 144, 14);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: .5em 2em;
+}
+
+input::placeholder, textarea::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+label {
+    cursor: default;
+}
+
+
 @media (max-width: 990px){
     .pasos{
         flex-direction: column;
@@ -655,6 +704,10 @@ a{
     .bg-banner img{
         height: auto;
     }
+
+    form {
+        max-width: 100%;
+    }
     
 }
 
@@ -694,22 +747,36 @@ a{
 
     .footer{
         flex-direction: column;
-        align-items: center;
-        margin-bottom: 4em;
+        background-color: #687982;
+        color: rgba(255, 255, 255, 0.5);
     }
 
     .footer .logo{
-        margin-left: 0;
-        margin-top: 5em;
-        margin-bottom: 5em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2em;
     }
 
     .footer .direccion{
-        margin-bottom: 4em;
+        align-items: flex-start;
+    }
+
+    .footer .direccion .datos{
+        width: 100%;
+        display: flex;
+        margin-bottom: 1em;
+        padding-bottom: .2em;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .footer .direccion .datos img{
+        margin-right: .5em;
     }
 
     .footer .direccion a{
-        margin-bottom: .3em;
+        margin-bottom: 0;
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.5);
     }
 
     .servicios{
